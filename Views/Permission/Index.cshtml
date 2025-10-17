@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ProjectCRM.Models.Permission>
+@{
+    //Layout = "_LoginLayout";
+    ViewData["Title"] = "Customer";
+}
+
+<link rel="stylesheet" href="~/css/style.css" />
+<h1 class="display-6">Permission System</h1>
+<section>
+<div class="row">
+<table id="permission" class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Role</th>
+            <th scope="col">Level</th>
+            <th scope="col">Active</th>
+        </tr>
+    </thead>    
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.Name</td>
+                <td>@customer.Role</td>
+                <td>@customer.level</td>
+                <td class="text-center">
+                   <input type="checkbox"
+                           @(customer.active == "Y" ? "checked" : "")
+                           onchange="toggleActive('@customer.staff_id', '@customer.username', this.checked)" />
+                </td>
+            </tr>
+        }
+    </tbody>
+    </table>
+    </div>
+    </section>
+
+@section Scripts {
+    <script src="~/js/Permission.js"></script>
+}

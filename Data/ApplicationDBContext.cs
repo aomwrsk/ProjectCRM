@@ -9,6 +9,6 @@ namespace ProjectCRM.Data
         {
         }
         // Define your DbSets (tables) here
-        public DbSet<Customer> a_user { get; set; }
+        public DbSet<Permission> a_user { get; set; }
     }
 }

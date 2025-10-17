@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Sales Dashboard";
+}
+
+<link rel="stylesheet" href="~/css/dashboard.css" />
+<h1 class="display-6 text-center mb-4">Sales Performance Dashboard</h1>
+
+<div class="dashboard-container">
+    <div class="card shadow p-4">
+        <h5 class="card-title text-center mb-3">ยอดขายรายเดือน (Monthly Sales)</h5>
+        <canvas id="salesChart" height="120"></canvas>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="~/js/Dashboard.js"></script>
+}

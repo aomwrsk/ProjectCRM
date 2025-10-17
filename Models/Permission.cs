@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjectCRM.Models
 {
-    public class Customer
+    public class Permission
     {
         [Key]
         [Column(TypeName = "char(13)")]
@@ -12,12 +12,17 @@ namespace ProjectCRM.Models
 
         [Required]
         [Column(TypeName = "varchar(100)")]
+        public required string Name { get; set; }
+
+        [Column(TypeName = "varchar(100)")]
         public required string username { get; set; }
 
         [Column(TypeName = "varchar(25)")]
         public string? Role { get; set; }
 
-        [Column(TypeName = "char(1)")]
-        public string? active { get; set; }
+        public int level { get; set; }
+
+        [StringLength(1)]
+        public required string active { get; set; }
     }
 }

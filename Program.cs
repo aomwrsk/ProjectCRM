@@ -27,7 +27,7 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Customer}/{action=Index}/{id?}")
+    pattern: "{controller=Permission}/{action=Index}/{id?}")
     .WithStaticAssets();
 
 
